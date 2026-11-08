@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Take Action — Fire OSU Coaches</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a; --black-alt: #131313; --black-card: #181818;
+    --red: #c8102e; --red-dim: #7a0a1c; --red-glow: rgba(200, 16, 46, 0.25);
+    --white: #f5f5f3; --dim: #8f8f8f; --line: #2a2a2a;
+    --red-text: #ff4757;
+    --display: 'Anton', sans-serif; --body: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: var(--body); line-height: 1.6; overflow-x: hidden; }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 999; pointer-events: none; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+  header { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .navrow { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; max-width: 1100px; margin: 0 auto; }
+  .logo { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.5px; }
+  .logo span { color: var(--red-text); }
+  nav.links { display: flex; gap: 28px; }
+  nav.links a { font-size: 0.88rem; color: var(--dim); font-weight: 600; transition: color 0.2s; }
+  nav.links a:hover { color: var(--white); }
+  nav.links a.current { color: var(--red-text); }
+  .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 18px; font-weight: 700; font-size: 0.85rem; border-radius: 2px; }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 7px 11px;
+    border-radius: 2px;
+  }
+  .menu-toggle:hover { border-color: var(--dim); }
+  @media (max-width: 860px) {
+    .menu-toggle { display: block; }
+    header { position: sticky; }
+    nav.links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--black-alt);
+      border-bottom: 1px solid var(--line);
+      padding: 8px 28px 18px;
+      z-index: 200;
+    }
+    nav.links.open { display: flex; }
+    nav.links a {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1rem;
+      color: var(--dim);
+    }
+    nav.links a.current { color: var(--red-text); }
+    nav.links a:last-child { border-bottom: none; }
+  }
+
+  .page-hero { padding: 80px 28px 60px; border-bottom: 1px solid var(--line); text-align: center; }
+  .hero-tag { display: inline-block; font-size: 0.78rem; color: var(--red-text); font-weight: 700; letter-spacing: 3px; margin-bottom: 20px; border: 1px solid var(--red-dim); padding: 6px 14px; border-radius: 2px; }
+  h1.page-title { font-family: var(--display); font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.05; max-width: 780px; margin: 0 auto 20px; }
+  h1.page-title .red { color: var(--red); }
+  .page-sub { max-width: 620px; margin: 0 auto; color: var(--dim); font-size: 1.05rem; }
+
+  section.block { padding: 80px 28px; border-bottom: 1px solid var(--line); max-width: 1100px; margin: 0 auto; }
+  .kicker { color: var(--red-text); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 14px; display: block; }
+  h2.block-title { font-family: var(--display); font-size: clamp(1.7rem, 4vw, 2.3rem); line-height: 1.1; margin-bottom: 18px; max-width: 700px; }
+  .block-desc { color: var(--dim); font-size: 0.98rem; max-width: 620px; margin-bottom: 24px; }
+
+  /* letter template box */
+  .letter-box {
+    background: var(--black-card); border: 1px solid var(--line); padding: 44px 40px;
+    font-size: 0.92rem; color: #d4d4d4; margin-top: 10px;
+  }
+  .letter-box .lline { margin-bottom: 14px; }
+  .letter-box .lsub { color: var(--red-text); font-weight: 700; margin-bottom: 20px; }
+  .letter-box .lstat { color: var(--white); font-weight: 600; }
+  .letter-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+
+  .btn { padding: 14px 26px; font-weight: 700; font-size: 0.88rem; border-radius: 2px; display: inline-block; border: 1px solid transparent; transition: transform 0.15s ease, background 0.2s; cursor: pointer; }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { transform: translateY(-2px); background: #d91733; }
+  .btn-ghost { border-color: var(--line); color: var(--white); background: transparent; }
+  .btn-ghost:hover { border-color: var(--dim); }
+  .btn-lg { padding: 16px 32px; font-size: 0.95rem; }
+
+  .contact-list { margin-top: 30px; }
+  .contact-row { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .contact-row .name { font-weight: 600; }
+  .contact-row .role { color: var(--dim); font-size: 0.85rem; margin-top: 2px; }
+
+  .note-box {
+    background: var(--black-alt); border-left: 3px solid var(--red); padding: 22px 26px;
+    margin-top: 30px; font-size: 0.9rem; color: var(--dim);
+  }
+  .note-box .highlight { color: var(--white); font-weight: 600; }
+
+  .share-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 20px; }
+  .share-card { background: var(--black-card); padding: 30px 26px; text-align: center; }
+  .share-card .tag { font-size: 0.72rem; color: var(--red-text); letter-spacing: 1.5px; font-weight: 700; margin-bottom: 12px; display: block; }
+  .share-card h4 { font-family: var(--display); font-size: 1.1rem; margin-bottom: 14px; line-height: 1.15; }
+  .share-card .btn { width: 100%; }
+
+  .social-icons { display: flex; gap: 16px; justify-content: center; margin-top: 30px; }
+  .social-icons a {
+    width: 50px; height: 50px; border: 1px solid var(--line); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem; color: var(--dim);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .social-icons a:hover { border-color: var(--red-text); color: var(--red-text); }
+
+  .tag-strip { text-align: center; margin-top: 20px; color: var(--red-text); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
+
+  .conduct-box { background: var(--black-card); border: 1px solid var(--line); padding: 34px 36px; margin-top: 10px; }
+  .conduct-box p { color: var(--dim); font-size: 0.95rem; }
+
+  footer { padding: 50px 28px 40px; border-top: 1px solid var(--line); }
+  .footer-grid { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px; }
+  .footer-links { display: flex; gap: 26px; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.85rem; color: var(--dim); }
+  .footer-links a:hover { color: var(--white); }
+  .footer-note { max-width: 1100px; margin: 34px auto 0; font-size: 0.78rem; color: #555; border-top: 1px solid var(--line); padding-top: 24px; }
+  .social-row { display: flex; gap: 14px; }
+  .social-row a { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--dim); }
+  .social-row a:hover { border-color: var(--red-text); color: var(--red-text); }
+
+  @media (max-width: 720px) { .share-grid { grid-template-columns: 1fr; } .contact-row { flex-direction: column; align-items: flex-start; gap: 6px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--red-text); outline-offset: 2px; }
+  /* skip link */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--red);
+    color: var(--white);
+    padding: 12px 20px;
+    z-index: 1000;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="navrow">
+    <a href="index.html" class="logo">FIRE<span>OSU</span>COACHES</a>
+    <nav class="links" id="primary-nav">
+      <a href="index.html">The Case</a>
+      <a href="Final-Timeline.html">The Timeline</a>
+      <a href="Final-Arthur-Smith.html">The Hires</a>
+      <a href="Final-Numbers.html">The Numbers</a>
+      <a href="index.html#the-ask">The Ask</a>
+      <a href="Final-FAQ.html">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a href="Final-Take-Action.html" class="nav-cta">Take Action</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero">
+  <span class="hero-tag">CASE FILE — TAKE ACTION</span>
+  <h1 class="page-title">The case is made. Here's how to be <span class="red">heard</span>.</h1>
+  <p class="page-sub">Administration responds to documented, repeated, specific communication — not one-off angry comments. Here's where to direct it.</p>
+</section>
+
+<section class="block">
+  <span class="kicker">01 — SEND THE LETTER</span>
+  <h2 class="block-title">A template built on the record, ready to personalize.</h2>
+  <p class="block-desc">Copy this, add a sentence or two in your own words, and send it directly. Personalized letters carry more weight than identical copy-paste text — offices tend to filter mass form campaigns.</p>
+
+  <div class="letter-box">
+    <div class="lline"><strong>Subject:</strong> Request for Accountability — Ohio State Football</div>
+    <div class="lline">Dear [Athletic Director Name / "Ohio State Department of Athletics"],</div>
+    <div class="lline">I am writing regarding a documented, seven-year pattern in Ohio State football that I believe warrants action. Since 2019, Ohio State has lost 15 games under Head Coach Ryan Day — <span class="lstat">7 of those losses involved squandering a significant lead</span>, most recently a blown 14-0 lead at home against Oregon on November 7, 2026 and a 23-3 lead against Texas on September 12, 2026.</div>
+    <div class="lline">In 2024, the only season without a signature late-game collapse, offensive play-calling was handled independently by an experienced coordinator, Chip Kelly — and that season ended in a national championship. Every other season, this pattern has recurred.</div>
+    <div class="lline">In January 2026, Ohio State hired Arthur Smith as offensive coordinator — a 21-30 record as an NFL head coach, no playoff appearances, and two below-average years as an NFL coordinator, with zero prior college experience. His first marquee game resulted in the collapse described above. On defense, coordinator Matt Patricia’s unit has been part of five losses in two seasons, four of them at neutral or away sites. The offensive line has also struggled in the program’s biggest games, allowing ten sacks in the final two games of 2025.</div>
+    <div class="lline">I am asking the athletic department to part ways with Head Coach Ryan Day. At the very least, I am asking that the coaches responsible for these results, including offensive coordinator Arthur Smith, defensive coordinator Matt Patricia and offensive line coach Tyler Bowen, be replaced.</div>
+    <div class="lline">Respectfully,<br>[Your Name]</div>
+
+    <div class="letter-actions">
+      <button class="btn btn-primary" id="copyLetterBtn" onclick="copyLetter(this)">Copy Letter Text</button>
+      <span id="copyStatus" class="visually-hidden" role="status" aria-live="polite"></span>
+      <a href="#" class="btn btn-ghost">Open in Email</a>
+    </div>
+  </div>
+
+  <div class="contact-list">
+    <div class="contact-row">
+      <div>
+        <div class="name">Ross Bjork</div>
+        <div class="role">Ohio State Athletic Director</div>
+      </div>
+      <a href="#" class="btn btn-ghost">Contact Page →</a>
+    </div>
+    <div class="contact-row">
+      <div>
+        <div class="name">Ohio State Board of Trustees</div>
+        <div class="role">University governance</div>
+      </div>
+      <a href="#" class="btn btn-ghost">Contact Page →</a>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <span class="kicker">02 — SHARE THE CASE</span>
+  <h2 class="block-title">Visibility is the fastest route to administration.</h2>
+  <p class="block-desc">Share the pages that hit hardest. Each one stands on its own.</p>
+
+  <div class="share-grid">
+    <div class="share-card">
+      <span class="tag">THE FULL RECORD</span>
+      <h4>15 losses, one pattern</h4>
+      <a href="Final-Timeline.html" class="btn btn-ghost">Share the Timeline</a>
+    </div>
+    <div class="share-card">
+      <span class="tag">THE HIRES</span>
+      <h4>The Hires: Smith, Patricia and the offensive line</h4>
+      <a href="Final-Arthur-Smith.html" class="btn btn-ghost">Share This Page</a>
+    </div>
+    <div class="share-card">
+      <span class="tag">THE MONEY</span>
+      <h4>What Ohio State is paying for</h4>
+      <a href="Final-Numbers.html" class="btn btn-ghost">Share This Page</a>
+    </div>
+  </div>
+
+  <div class="social-icons">
+    <a href="#" aria-label="Share on TikTok">TT</a>
+    <a href="#" aria-label="Share on Instagram">IG</a>
+    <a href="#" aria-label="Share on X">X</a>
+  </div>
+
+  <div class="tag-strip">#FireOSUCoaches #OhioState #Buckeyes #RyanDay #CFB</div>
+</section>
+
+<section class="block" style="border-bottom: none;">
+  <span class="kicker">03 — HOW WE DO THIS</span>
+  <h2 class="block-title">Facts, not attacks.</h2>
+  <div class="conduct-box">
+    <p>This campaign is built on documented records, statistics, and public statements — not personal attacks on Ryan Day, his family, or Ohio State players. We'd ask anyone sharing this content to hold the same line. The case is strong enough to make on the merits. Keep it there.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="logo" style="display:block; margin-bottom:14px;">FIRE<span>OSU</span>COACHES</a>
+      <div class="footer-links">
+        <a href="index.html">The Case</a>
+        <a href="Final-Timeline.html">The Timeline</a>
+        <a href="Final-Arthur-Smith.html">The Hires</a>
+        <a href="Final-Numbers.html">The Numbers</a>
+        <a href="index.html#the-ask">The Ask</a>
+        <a href="Final-FAQ.html">FAQ</a>
+        <a href="Final-Take-Action.html">Take Action</a>
+      </div>
+    </div>
+    <div class="social-row">
+      <a href="#" aria-label="TikTok">TT</a>
+      <a href="#" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+  <div class="footer-note wrap">
+    This site is built on publicly reported records, statistics, and direct quotes from coaches, players, and journalists. It is a fan advocacy project, not affiliated with The Ohio State University. We aim to keep every claim factual and sourced.
+  </div>
+</footer>
+
+<script>
+  function copyLetter(btn) {
+    const text = `Subject: Request for Accountability — Ohio State Football
+
+Dear Athletic Director Bjork / Ohio State Department of Athletics,
+
+I am writing regarding a documented, seven-year pattern in Ohio State football that I believe warrants action. Since 2019, Ohio State has lost 15 games under Head Coach Ryan Day — 7 of those losses involved squandering a significant lead, most recently a blown 14-0 lead at home against Oregon on November 7, 2026 and a 23-3 lead against Texas on September 12, 2026.
+
+In 2024, the only season without a signature late-game collapse, offensive play-calling was handled independently by an experienced coordinator, Chip Kelly — and that season ended in a national championship. Every other season, this pattern has recurred.
+
+In January 2026, Ohio State hired Arthur Smith as offensive coordinator — a 21-30 record as an NFL head coach, no playoff appearances, and two below-average years as an NFL coordinator, with zero prior college experience. His first marquee game resulted in the collapse described above. On defense, coordinator Matt Patricia’s unit has been part of five losses in two seasons, four of them at neutral or away sites. The offensive line has also struggled in the program’s biggest games, allowing ten sacks in the final two games of 2025.
+
+I am asking the athletic department to part ways with Head Coach Ryan Day. At the very least, I am asking that the coaches responsible for these results, including offensive coordinator Arthur Smith, defensive coordinator Matt Patricia and offensive line coach Tyler Bowen, be replaced.
+
+Respectfully,
+[Your Name]`;
+    const statusEl = document.getElementById('copyStatus');
+    const original = btn.textContent;
+
+    function announceSuccess() {
+      btn.textContent = "Copied!";
+      if (statusEl) statusEl.textContent = "Letter text copied to clipboard.";
+      setTimeout(() => {
+        btn.textContent = original;
+        if (statusEl) statusEl.textContent = "";
+      }, 2500);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(announceSuccess).catch(() => {
+        if (statusEl) statusEl.textContent = "Could not copy automatically. Please select and copy the letter text manually.";
+      });
+    } else {
+      if (statusEl) statusEl.textContent = "Copying isn't supported in this browser. Please select and copy the letter text manually.";
+    }
+  }
+</script>
+
+<script>
+  (function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('primary-nav');
+    if (!menuToggle || !navLinks) return;
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    function openMenu() {
+      navLinks.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+    });
+
+    navLinks.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.classList.contains('open')) return;
+      if (navLinks.contains(e.target) || menuToggle.contains(e.target)) return;
+      closeMenu();
+    });
+  })();
+</script>
+
+</body>
+</html>

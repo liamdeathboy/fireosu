@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Full Timeline — Fire OSU Coaches</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --black-alt: #131313;
+    --black-card: #181818;
+    --red: #c8102e;
+    --red-dim: #7a0a1c;
+    --red-glow: rgba(200, 16, 46, 0.25);
+    --white: #f5f5f3;
+    --dim: #8f8f8f;
+    --line: #2a2a2a;
+    --red-text: #ff4757;
+    --display: 'Anton', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .navrow {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px; max-width: 1100px; margin: 0 auto;
+  }
+  .logo { font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.5px; }
+  .logo span { color: var(--red-text); }
+  nav.links { display: flex; gap: 28px; }
+  nav.links a { font-size: 0.88rem; color: var(--dim); font-weight: 600; transition: color 0.2s; }
+  nav.links a:hover { color: var(--white); }
+  nav.links a.current { color: var(--red-text); }
+  .nav-cta { background: var(--red); color: var(--white) !important; padding: 9px 18px; font-weight: 700; font-size: 0.85rem; border-radius: 2px; }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--white);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 7px 11px;
+    border-radius: 2px;
+  }
+  .menu-toggle:hover { border-color: var(--dim); }
+  @media (max-width: 860px) {
+    .menu-toggle { display: block; }
+    header { position: sticky; }
+    nav.links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--black-alt);
+      border-bottom: 1px solid var(--line);
+      padding: 8px 28px 18px;
+      z-index: 200;
+    }
+    nav.links.open { display: flex; }
+    nav.links a {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1rem;
+      color: var(--dim);
+    }
+    nav.links a.current { color: var(--red-text); }
+    nav.links a:last-child { border-bottom: none; }
+  }
+
+  /* PAGE HERO */
+  .page-hero {
+    padding: 80px 28px 60px;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .hero-tag {
+    display: inline-block; font-size: 0.78rem; color: var(--red-text); font-weight: 700;
+    letter-spacing: 3px; margin-bottom: 20px; border: 1px solid var(--red-dim);
+    padding: 6px 14px; border-radius: 2px;
+  }
+  h1.page-title {
+    font-family: var(--display);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.02;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  h1.page-title .red { color: var(--red); }
+  .page-sub { max-width: 620px; margin: 0 auto; color: var(--dim); font-size: 1.05rem; }
+
+  /* TIMELINE */
+  .timeline-section { padding: 80px 28px; max-width: 900px; margin: 0 auto; }
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    border-left: 2px solid var(--line);
+  }
+  .t-item {
+    position: relative;
+    padding-bottom: 56px;
+  }
+  .t-item:last-child { padding-bottom: 0; }
+  .t-item::before {
+    content: "";
+    position: absolute;
+    left: -46px;
+    top: 4px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+    border: 3px solid var(--black);
+    box-shadow: 0 0 0 2px var(--red-dim);
+  }
+  .t-item.win::before { background: var(--white); box-shadow: 0 0 0 2px var(--dim); }
+  .t-year {
+    font-family: var(--display);
+    font-size: 1.6rem;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .t-item.win .t-year { color: var(--white); }
+  .t-game {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+  }
+  .t-score {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--dim);
+    border: 1px solid var(--line);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+  .t-desc { color: var(--dim); font-size: 0.96rem; max-width: 560px; }
+  .t-item.win .t-desc { color: #c9c9c9; }
+  .t-item.win .t-score { border-color: var(--red-dim); color: var(--red-text); }
+  .t-callout {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: var(--black-card);
+    border-left: 2px solid var(--red);
+    font-size: 0.88rem;
+    color: var(--white);
+    font-style: italic;
+  }
+
+  /* THROUGHLINE */
+  .throughline {
+    background: var(--black-alt);
+    padding: 90px 28px;
+    text-align: center;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .throughline h2 {
+    font-family: var(--display);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    max-width: 760px;
+    margin: 0 auto 20px;
+    line-height: 1.1;
+  }
+  .throughline p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--dim);
+    font-size: 1rem;
+  }
+  .throughline .red { color: var(--red-text); }
+
+  /* CTA ROW */
+  .cta-row {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    padding: 60px 28px 90px;
+  }
+  .btn {
+    padding: 15px 30px; font-weight: 700; font-size: 0.95rem; border-radius: 2px;
+    display: inline-block; border: 1px solid transparent; transition: transform 0.15s ease, background 0.2s;
+  }
+  .btn-primary { background: var(--red); color: var(--white); }
+  .btn-primary:hover { transform: translateY(-2px); background: #d91733; }
+  .btn-ghost { border-color: var(--line); color: var(--white); }
+  .btn-ghost:hover { border-color: var(--dim); }
+
+  /* FOOTER */
+  footer { padding: 50px 28px 40px; border-top: 1px solid var(--line); }
+  .footer-grid {
+    max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between;
+    align-items: flex-start; flex-wrap: wrap; gap: 30px;
+  }
+  .footer-links { display: flex; gap: 26px; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.85rem; color: var(--dim); }
+  .footer-links a:hover { color: var(--white); }
+  .footer-note {
+    max-width: 1100px; margin: 34px auto 0; font-size: 0.78rem; color: #555;
+    border-top: 1px solid var(--line); padding-top: 24px;
+  }
+  .social-row { display: flex; gap: 14px; }
+  .social-row a {
+    width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--dim);
+  }
+  .social-row a:hover { border-color: var(--red-text); color: var(--red-text); }
+
+  @media (max-width: 600px) {
+    .timeline { padding-left: 28px; }
+    .t-item::before { left: -34px; }
+    .t-score { display: block; margin-left: 0; margin-top: 6px; width: fit-content; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--red-text); outline-offset: 2px; }
+  /* skip link */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--red);
+    color: var(--white);
+    padding: 12px 20px;
+    z-index: 1000;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="navrow">
+    <a href="index.html" class="logo">FIRE<span>OSU</span>COACHES</a>
+    <nav class="links" id="primary-nav">
+      <a href="index.html">The Case</a>
+      <a href="Final-Timeline.html" class="current">The Timeline</a>
+      <a href="Final-Arthur-Smith.html">The Hires</a>
+      <a href="Final-Numbers.html">The Numbers</a>
+      <a href="index.html#the-ask">The Ask</a>
+      <a href="Final-FAQ.html">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a href="Final-Take-Action.html" class="nav-cta">Take Action</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero">
+  <span class="hero-tag">CASE FILE — FULL RECORD</span>
+  <h1 class="page-title">Every documented <span class="red">collapse</span>, in order.</h1>
+  <p class="page-sub">Fifteen losses. Four different play-callers. One recurring failure mode. Here's the record, game by game.</p>
+</section>
+
+<section class="timeline-section">
+  <div class="timeline">
+
+    <div class="t-item">
+      <div class="t-year">2019</div>
+      <h2 class="t-game">Fiesta Bowl vs. Clemson <span class="t-score">L, 29–23</span></h2>
+      <p class="t-desc">Day's first loss as full-time head coach. Ohio State was in position to win late in this College Football Playoff semifinal before a series of red-zone failures and a game-sealing interception ended the season.</p>
+      <div class="t-callout">Day has said it is "hard to let go" of this loss.</div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2020</div>
+      <h2 class="t-game">CFP National Championship vs. Alabama <span class="t-score">L, 52–24</span></h2>
+      <p class="t-desc">In a season shortened by COVID-19, Ohio State reached the national title game and was beaten decisively by top-ranked Alabama.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2021</div>
+      <h2 class="t-game">vs. Oregon (home) <span class="t-score">L, 35–28</span></h2>
+      <p class="t-desc">No. 3 Ohio State lost at home to No. 12 Oregon in September — an early sign of the vulnerability against physical, well-coached opponents that would define several future losses.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2021</div>
+      <h2 class="t-game">vs. Michigan <span class="t-score">L, 42–27</span></h2>
+      <p class="t-desc">Michigan's run game took over in the second half, ending Ohio State's eight-game winning streak in the rivalry.</p>
+      <div class="t-callout">Day himself called this "one bad half" — specifically the second half of this game.</div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2022</div>
+      <h2 class="t-game">Peach Bowl (CFP Semifinal) vs. Georgia <span class="t-score">L, 42–41</span></h2>
+      <p class="t-desc">Ohio State led by 14 points and let it slip away. The most damaging sequence: getting the ball back with 51 seconds left needing only a field goal to win, and missing a 50-yard attempt after mismanaging the clock on the final drive.</p>
+      <div class="t-callout">Widely cited as one of the two losses that haunts Day most, alongside the 2019 Clemson game.</div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2022</div>
+      <h2 class="t-game">vs. Michigan (home) <span class="t-score">L, 45–23</span></h2>
+      <p class="t-desc">Second straight loss to the Wolverines — Michigan's first win in Columbus since 2000.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2023</div>
+      <h2 class="t-game">at Notre Dame <span class="t-score">L, 17–14</span></h2>
+      <p class="t-desc">Ohio State lost a three-point game on the road to Notre Dame on a last-second field goal.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2023</div>
+      <h2 class="t-game">vs. Michigan <span class="t-score">L, 30–24</span></h2>
+      <p class="t-desc">A third consecutive loss to Michigan, extending the losing streak and intensifying outside pressure on Day, including public criticism from analysts questioning his job security.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2024</div>
+      <h2 class="t-game">vs. Oregon <span class="t-score">L, 32–31</span></h2>
+      <p class="t-desc">Ohio State had a fourth-and-short chance to seal the win in Eugene. An offensive pass interference call on the final possession helped end the Buckeyes' bid, and the clock ran out before a final play could be run.</p>
+      <div class="t-callout">Chip Kelly was OC/play-caller this season — Ohio State's only loss besides Michigan came here.</div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2024</div>
+      <h2 class="t-game">vs. Michigan (home) <span class="t-score">L, 13–10</span></h2>
+      <p class="t-desc">A fourth straight loss to Michigan, particularly stinging as a home loss to an unranked Michigan team. Widely described as one of the worst losses of the Day era — though Ohio State still made and won the expanded 12-team playoff weeks later.</p>
+    </div>
+
+    <div class="t-item win">
+      <div class="t-year">2024</div>
+      <h2 class="t-game">CFP National Championship vs. Notre Dame <span class="t-score">W, 34–23</span></h2>
+      <p class="t-desc">The one full season without a signature collapse. Chip Kelly called plays independently all year. Ohio State finished 14–2 and won its first national title since 2014.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2025</div>
+      <h2 class="t-game">Big Ten Championship vs. Indiana <span class="t-score">L, 13–10</span></h2>
+      <p class="t-desc">Ohio State was undefeated (12-0) entering the game. Shut out in the second half of the one game that mattered most, with Brian Hartline as primary play-caller.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2025</div>
+      <h2 class="t-game">Cotton Bowl (CFP Quarterfinal) vs. Miami <span class="t-score">L, 24–14</span></h2>
+      <p class="t-desc">Just weeks after taking play-calling duties back from Hartline, Day called this game himself. Ohio State's season ended in the quarterfinals.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2026</div>
+      <h2 class="t-game">vs. Texas <span class="t-score">L, 24–23</span></h2>
+      <p class="t-desc">Led 23–3 with 8:09 left in the third quarter — a win probability north of 98%. Gave up 21 unanswered points. The first loss in program history after leading by 17+ points at halftime. New OC Arthur Smith's first marquee test as play-caller.</p>
+      <div class="t-callout">Center Carson Hinzman, postgame: "We really just beat ourselves."</div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2026</div>
+      <h2 class="t-game">at USC <span class="t-score">L, 30–18</span></h2>
+      <p class="t-desc">Ohio State never led against an unranked USC team. The defense gave up a 69-yard touchdown run on the second snap and a 70-yard reception, and 30 points in all, the most it had allowed in 31 games. The offensive line was pressured 21 times and flagged four times. The second loss before November in over ten years.</p>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year">2026</div>
+      <h2 class="t-game">vs. No. 23 Oregon <span class="t-score">L, 41–28</span></h2>
+      <p class="t-desc">Ohio State went up 14–0 at home and lost by 13, giving up 41 points to Oregon. A third loss in 2026 and the seventh time the Day era has lost a game after holding a lead.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="throughline">
+  <h2>Across four different play-callers, the pattern holds.</h2>
+  <p>Build a big lead through aggressive offense. Get conservative on both sides of the ball while the opponent has nothing left to lose. The one season this didn't happen — 2024, under an independent, experienced coordinator — ended in a national championship. <span class="red">That is not a coincidence.</span></p>
+</section>
+
+<div class="cta-row">
+  <a href="Final-Arthur-Smith.html" class="btn btn-primary">Meet the Three Hires</a>
+  <a href="Final-Take-Action.html" class="btn btn-ghost">Send a Letter to the Athletic Director</a>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="logo" style="display:block; margin-bottom:14px;">FIRE<span>OSU</span>COACHES</a>
+      <div class="footer-links">
+        <a href="index.html">The Case</a>
+        <a href="Final-Timeline.html">The Timeline</a>
+        <a href="Final-Arthur-Smith.html">The Hires</a>
+        <a href="Final-Numbers.html">The Numbers</a>
+        <a href="index.html#the-ask">The Ask</a>
+        <a href="Final-FAQ.html">FAQ</a>
+        <a href="Final-Take-Action.html">Take Action</a>
+      </div>
+    </div>
+    <div class="social-row">
+      <a href="#" aria-label="TikTok">TT</a>
+      <a href="#" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+  <div class="footer-note wrap">
+    This site is built on publicly reported records, statistics, and direct quotes from coaches, players, and journalists. It is a fan advocacy project, not affiliated with The Ohio State University. We aim to keep every claim factual and sourced.
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('primary-nav');
+    if (!menuToggle || !navLinks) return;
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+    function openMenu() {
+      navLinks.classList.add('open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (navLinks.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+    });
+
+    navLinks.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.classList.contains('open')) return;
+      if (navLinks.contains(e.target) || menuToggle.contains(e.target)) return;
+      closeMenu();
+    });
+  })();
+</script>
+
+</body>
+</html>

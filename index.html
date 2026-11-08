@@ -3,904 +3,262 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fire OSU Coaches | The Record Speaks For Itself</title>
+<title>Fire OSU Coaches | 15 Losses. Same Ending.</title>
+<meta name="description" content="15 losses since 2019. Seven after holding the lead. A sourced case for accountability in Ohio State football, and a two-minute letter to the athletic director.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fire OSU Coaches | 15 Losses. Same Ending.">
+<meta property="og:description" content="15 losses since 2019. Seven after holding the lead. A sourced case for accountability in Ohio State football, and a two-minute letter to the athletic director.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='32' y='46' font-family='Impact,Arial Black,sans-serif' font-size='40' fill='%23ff4757' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black: #0a0a0a;
-    --black-alt: #131313;
-    --black-card: #181818;
-    --red: #c8102e;
-    --red-dim: #7a0a1c;
-    --red-glow: rgba(200, 16, 46, 0.25);
-    --white: #f5f5f3;
-    --dim: #8f8f8f;
-    --line: #2a2a2a;
-    --red-text: #ff4757;
-    --display: 'Anton', sans-serif;
-    --body: 'Inter', sans-serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--body);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  /* grain texture overlay */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    pointer-events: none;
-    opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
-
-  /* ---------- NAV ---------- */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--line);
-  }
-  .navrow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 28px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .logo {
-    font-family: var(--display);
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-    color: var(--white);
-  }
-  .logo span { color: var(--red-text); }
-  nav.links { display: flex; gap: 28px; }
-  nav.links a {
-    font-size: 0.88rem;
-    color: var(--dim);
-    font-weight: 600;
-    transition: color 0.2s;
-  }
-  nav.links a:hover { color: var(--white); }
-  .nav-cta {
-    background: var(--red);
-    color: var(--white) !important;
-    padding: 9px 18px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    border-radius: 2px;
-  }
-  .nav-right { display: flex; align-items: center; gap: 14px; }
-  .menu-toggle {
-    display: none;
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--white);
-    font-size: 1.2rem;
-    line-height: 1;
-    cursor: pointer;
-    padding: 7px 11px;
-    border-radius: 2px;
-  }
-  .menu-toggle:hover { border-color: var(--dim); }
-  @media (max-width: 860px) {
-    .menu-toggle { display: block; }
-    header { position: sticky; }
-    nav.links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      flex-direction: column;
-      gap: 0;
-      background: var(--black-alt);
-      border-bottom: 1px solid var(--line);
-      padding: 8px 28px 18px;
-      z-index: 200;
-    }
-    nav.links.open { display: flex; }
-    nav.links a {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 1rem;
-      color: var(--dim);
-    }
-    nav.links a.current { color: var(--red-text); }
-    nav.links a:last-child { border-bottom: none; }
-  }
-
-  /* ---------- HERO ---------- */
-  .hero {
-    position: relative;
-    padding: 110px 28px 90px;
-    text-align: center;
-    border-bottom: 1px solid var(--line);
-    overflow: hidden;
-  }
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.78rem;
-    color: var(--red-text);
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 22px;
-    border: 1px solid var(--red-dim);
-    padding: 6px 14px;
-    border-radius: 2px;
-  }
-  h1.hero-headline {
-    font-family: var(--display);
-    font-size: clamp(2.6rem, 7vw, 5.2rem);
-    line-height: 1.02;
-    letter-spacing: 0.5px;
-    color: var(--white);
-    max-width: 900px;
-    margin: 0 auto 26px;
-  }
-  .hero-headline .red { color: var(--red); }
-  .hero-sub {
-    max-width: 620px;
-    margin: 0 auto 42px;
-    color: var(--dim);
-    font-size: 1.08rem;
-  }
-  .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn {
-    padding: 15px 30px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    border-radius: 2px;
-    display: inline-block;
-    border: 1px solid transparent;
-    transition: transform 0.15s ease, background 0.2s;
-  }
-  .btn-primary { background: var(--red); color: var(--white); }
-  .btn-primary:hover { transform: translateY(-2px); background: #d91733; }
-  .btn-ghost { border-color: var(--line); color: var(--white); }
-  .btn-ghost:hover { border-color: var(--dim); }
-
-  /* collapsing scoreline SVG under hero */
-  .chart-wrap {
-    max-width: 780px;
-    margin: 60px auto 0;
-    position: relative;
-  }
-  .chart-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    color: var(--dim);
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    font-weight: 600;
-  }
-  .chart-label .now { color: var(--red-text); }
-
-  /* ---------- STAT STRIP ---------- */
-  .stats {
-    border-bottom: 1px solid var(--line);
-    background: var(--black-alt);
-  }
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .stat-cell {
-    padding: 46px 24px;
-    text-align: center;
-    border-left: 1px solid var(--line);
-  }
-  .stat-cell:first-child { border-left: none; }
-  .stat-num {
-    font-family: var(--display);
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    color: var(--red);
-    line-height: 1;
-  }
-  .stat-caption {
-    font-size: 0.82rem;
-    color: var(--dim);
-    margin-top: 10px;
-    max-width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ---------- SECTION GENERIC ---------- */
-  section.block { padding: 100px 28px; border-bottom: 1px solid var(--line); }
-  .block-head { max-width: 640px; margin-bottom: 52px; }
-  .kicker {
-    color: var(--red-text);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
-    display: block;
-  }
-  h2.block-title {
-    font-family: var(--display);
-    font-size: clamp(1.9rem, 4vw, 3rem);
-    line-height: 1.05;
-    margin-bottom: 18px;
-  }
-  .block-desc { color: var(--dim); font-size: 1.02rem; max-width: 560px; }
-
-  /* ---------- ONE EXCEPTION TABLE ---------- */
-  .compare-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  .compare-table thead th {
-    text-align: left;
-    font-size: 0.78rem;
-    color: var(--dim);
-    letter-spacing: 1px;
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--line);
-    font-weight: 600;
-  }
-  .compare-table td, .compare-table tbody th {
-    padding: 18px 16px;
-    border-bottom: 1px solid var(--line);
-    font-size: 0.95rem;
-  }
-  .compare-table tr.win td { color: var(--white); }
-  .compare-table tr.win th { color: var(--white); }
-  .compare-table tr.win td:last-child { color: var(--red-text); font-weight: 700; }
-  .compare-table tbody th { color: var(--dim); font-weight: 600; width: 90px; text-align: left; }
-  .row-highlight { background: linear-gradient(90deg, var(--red-glow), transparent); }
-
-  /* ---------- ROTATOR ---------- */
-  .rotator-outer { position: relative; }
-  .rotator {
-    position: relative;
-    padding-top: 8px;
-    background: var(--black-card);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    overflow: hidden;
-    min-height: 260px;
-  }
-  .rotator-slide {
-    display: none;
-    padding: 46px 46px;
-    grid-template-columns: 1fr auto;
-    gap: 30px;
-    align-items: center;
-  }
-  .rotator-slide.active { display: grid; }
-  .rotator-slide .eyebrow {
-    color: var(--red-text);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-  .rotator-slide h3 {
-    font-family: var(--display);
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
-    line-height: 1.12;
-    margin-bottom: 14px;
-  }
-  .rotator-slide p { color: var(--dim); font-size: 0.98rem; max-width: 440px; }
-  .rotator-slide .stat-side {
-    text-align: center;
-    padding-left: 30px;
-    border-left: 1px solid var(--line);
-  }
-  .rotator-slide .stat-side .num {
-    font-family: var(--display);
-    font-size: 2.6rem;
-    color: var(--red);
-    display: block;
-  }
-  .rotator-slide .stat-side .lbl {
-    font-size: 0.75rem;
-    color: var(--dim);
-    letter-spacing: 1px;
-  }
-  .rotator-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  .dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--line);
-    cursor: pointer;
-    border: none;
-    transition: background 0.2s;
-  }
-  .dot.active { background: var(--red); }
-
-  /* ---------- THE ASK ---------- */
-  .ask-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-  .ask-card {
-    background: var(--black-card);
-    border: 1px solid var(--line);
-    padding: 40px 32px;
-    border-radius: 3px;
-    position: relative;
-  }
-  .ask-card .opt-num {
-    font-family: var(--display);
-    font-size: 0.85rem;
-    color: var(--red-text);
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-    display: block;
-  }
-  .ask-card h3 {
-    font-family: var(--display);
-    font-size: 1.5rem;
-    margin-bottom: 16px;
-    line-height: 1.1;
-  }
-  .ask-card p { color: var(--dim); font-size: 0.95rem; }
-  .ask-or {
-    text-align: center;
-    font-family: var(--display);
-    color: var(--dim);
-    font-size: 1.1rem;
-    margin: 22px 0;
-    letter-spacing: 3px;
-  }
-
-  /* ---------- CARD GRID (explore pages) ---------- */
-  .explore-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .explore-card {
-    background: var(--black-alt);
-    padding: 34px 26px;
-    transition: background 0.2s;
-  }
-  .explore-card:hover { background: var(--black-card); }
-  .explore-card .tag {
-    font-size: 0.72rem;
-    color: var(--red-text);
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    margin-bottom: 14px;
-    display: block;
-  }
-  .explore-card h3 {
-    font-family: var(--display);
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-    line-height: 1.15;
-  }
-  .explore-card p { font-size: 0.85rem; color: var(--dim); }
-
-  /* ---------- FINAL CTA ---------- */
-  .final-cta {
-    text-align: center;
-    padding: 110px 28px;
-    background: radial-gradient(ellipse at center, var(--red-glow) 0%, transparent 65%);
-  }
-  .final-cta h2 {
-    font-family: var(--display);
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    max-width: 780px;
-    margin: 0 auto 26px;
-    line-height: 1.05;
-  }
-  .final-cta p { color: var(--dim); max-width: 520px; margin: 0 auto 36px; }
-
-  /* ---------- FOOTER ---------- */
-  footer {
-    padding: 50px 28px 40px;
-    border-top: 1px solid var(--line);
-  }
-  .footer-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  .footer-links { display: flex; gap: 26px; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.85rem; color: var(--dim); }
-  .footer-links a:hover { color: var(--white); }
-  .footer-note {
-    max-width: 1100px;
-    margin: 34px auto 0;
-    font-size: 0.78rem;
-    color: #555;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
-  }
-  .social-row { display: flex; gap: 14px; }
-  .social-row a {
-    width: 34px; height: 34px;
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem;
-    color: var(--dim);
-  }
-  .social-row a:hover { border-color: var(--red-text); color: var(--red-text); }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 860px) {
-    .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-cell:nth-child(2) { border-left: 1px solid var(--line); }
-    .stat-cell:nth-child(3) { border-left: none; border-top: 1px solid var(--line); }
-    .stat-cell:nth-child(4) { border-top: 1px solid var(--line); }
-    .ask-grid { grid-template-columns: 1fr; }
-    .explore-grid { grid-template-columns: repeat(2, 1fr); }
-    .rotator-slide { grid-template-columns: 1fr; }
-    .rotator-slide .stat-side { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 20px; text-align: left; }
-  }
-  @media (max-width: 520px) {
-    .explore-grid { grid-template-columns: 1fr; }
-    .hero { padding: 80px 20px 60px; }
-  }
-
-  /* reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; }
-  }
-
-  /* focus visibility */
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--red-text);
-    outline-offset: 2px;
-  }
-
-  /* skip link */
-  .skip-link {
-    position: absolute;
-    left: -9999px;
-    top: 0;
-    background: var(--red);
-    color: var(--white);
-    padding: 12px 20px;
-    z-index: 1000;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-  .skip-link:focus {
-    left: 12px;
-    top: 12px;
-  }
-
-  .rotator-pause {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--dim);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  .rotator-pause:hover { border-color: var(--dim); color: var(--white); }
-  .visually-hidden {
-    position: absolute;
-    width: 1px; height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-</style>
+<link rel="stylesheet" href="assets/site.css">
+<link rel="canonical" href="https://fireosucoaches.com/">
+<meta property="og:url" content="https://fireosucoaches.com/">
+<script src="assets/analytics.js"></script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
-<header>
-  <div class="navrow">
-    <div class="logo">FIRE<span>OSU</span>COACHES</div>
-    <nav class="links" id="primary-nav">
-      <a href="index.html" class="current">The Case</a>
-      <a href="Final-Timeline.html">The Timeline</a>
-      <a href="Final-Arthur-Smith.html">The Hires</a>
-      <a href="Final-Numbers.html">The Numbers</a>
-      <a href="#the-ask">The Ask</a>
-      <a href="Final-FAQ.html">FAQ</a>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a href="./" class="logo" aria-label="Fire OSU Coaches, home">FIRE<span>OSU</span>COACHES</a>
+    <nav class="links" id="primary-nav" aria-label="Main">
+        <a href="./" class="current" aria-current="page">The Case</a>
+        <a href="timeline/">The Timeline</a>
+        <a href="hires/">The Hires</a>
+        <a href="numbers/">The Numbers</a>
+        <a href="#the-ask">The Ask</a>
+        <a href="faq/">FAQ</a>
+        <a href="sources/">Sources</a>
     </nav>
-    <div class="nav-right">
-      <a href="Final-Take-Action.html" class="nav-cta">Take Action</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    <div class="head-right">
+      <a href="take-action/" data-track="CTA: Nav" class="nav-cta">Take Action</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
     </div>
   </div>
 </header>
+<main id="main">
 
-<main id="main-content">
-
-<!-- HERO -->
-<section class="hero">
-  <span class="hero-tag">CASE FILE: 7 YEARS, 15 LOSSES</span>
-  <h1 class="hero-headline">Seven years. Fifteen losses. <span class="red">One pattern.</span></h1>
-  <p class="hero-sub">Ohio State has the talent to win every game on its schedule. Under Ryan Day, it keeps losing the same way, in the same moments, against the same caliber of opponent. The record is documented. Ryan Day should be fired, and at the very least, the staff he hired has to go.</p>
-  <div class="hero-buttons">
-    <a href="#the-ask" class="btn btn-primary">See What We're Asking For</a>
-    <a href="Final-Timeline.html" class="btn btn-ghost">Read the Full Record</a>
-  </div>
-
-  <div class="chart-wrap">
-    <div class="chart-label">
-      <span>3RD QUARTER: OSU LEADS 23–3</span>
-      <span class="now">FINAL: TEXAS 24, OSU 23</span>
+<section class="hero" data-hide-sticky>
+  <div class="wrap" data-parallax>
+    <span class="kicker rv">Ohio State · 6–3 · November 2026</span>
+    <h1 class="h-xl rv">15 losses.<br><span class="red">Same ending.</span></h1>
+    <p class="lede rv">Seven times since 2019, Ryan Day's Ohio State had the lead and lost. Texas. Oregon. Again. Fire Ryan Day. At the very least, fire his staff.</p>
+    <div class="btn-row rv">
+      <a data-track="CTA: Send Letter" href="take-action/" class="btn btn-primary btn-big">Send your letter <span aria-hidden="true">→</span></a>
+      <a href="timeline/" class="btn btn-ghost btn-big">See all 15 losses</a>
     </div>
-    <svg viewBox="0 0 780 180" width="100%" height="180" preserveAspectRatio="none" role="img" aria-label="Line chart showing Ohio State's win probability collapsing from over 98 percent to a loss in the fourth quarter against Texas">
-      <defs>
-        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#c8102e" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#c8102e" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <!-- gridlines -->
-      <g stroke="#2a2a2a" stroke-width="1">
-        <line x1="0" y1="30" x2="780" y2="30"/>
-        <line x1="0" y1="90" x2="780" y2="90"/>
-        <line x1="0" y1="150" x2="780" y2="150"/>
-      </g>
-      <path d="M0,150 L60,150 L60,150 C160,150 190,140 260,120 C330,100 380,40 430,30 C470,22 500,30 520,42 C560,65 570,95 610,120 C660,150 700,150 780,150"
-            fill="none" stroke="#c8102e" stroke-width="3"/>
-      <path d="M0,150 L60,150 L60,150 C160,150 190,140 260,120 C330,100 380,40 430,30 C470,22 500,30 520,42 C560,65 570,95 610,120 C660,150 700,150 780,150 L780,180 L0,180 Z"
-            fill="url(#fade)" stroke="none"/>
-      <circle cx="430" cy="30" r="5" fill="#c8102e"/>
-      <circle cx="780" cy="150" r="5" fill="#f5f5f3"/>
-    </svg>
+    <p class="trust rv">Every number on this site links to its source. <a href="sources/">Check them yourself.</a></p>
   </div>
 </section>
 
-<!-- STAT STRIP -->
-<section class="stats">
-  <div class="stat-grid">
-    <div class="stat-cell">
-      <div class="stat-num">3–6</div>
-      <div class="stat-caption">Record vs. top-five teams: a 33% win rate against teams that lose 18% of the time nationally</div>
+<div class="urgency" data-countdown-wrap>
+  Michigan comes to Columbus on Nov. 28. That's <strong data-countdown="2026-11-28T12:00:00-05:00">3 weeks</strong> to be heard. <a href="take-action/">Send your letter →</a>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The record</span>
+      <h2 class="h-lg">The numbers fans already feel.</h2>
     </div>
-    <div class="stat-cell">
-      <div class="stat-num">7/15</div>
-      <div class="stat-caption">Losses that involved blowing a lead</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">7–8</div>
-      <div class="stat-caption">Record in one-score games since 2019</div>
-    </div>
-    <div class="stat-cell">
-      <div class="stat-num">1 / 4</div>
-      <div class="stat-caption">Play-callers who didn't preside over a signature collapse</div>
+    <div class="stats">
+      <div class="stat rv"><div class="n" data-count="15">15</div><div class="l">losses since 2019</div><a class="src" href="https://en.wikipedia.org/wiki/Ryan_Day" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+      <div class="stat rv"><div class="n" data-count="7">7</div><div class="l">of them after Ohio State had the lead</div><a class="src" href="timeline/">See the games →</a></div>
+      <div class="stat rv"><div class="n" data-count="4">4</div><div class="l">straight losses to Michigan, 2021 to 2024</div><a class="src" href="https://en.wikipedia.org/wiki/Ryan_Day" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+      <div class="stat rv"><div class="n" data-count="3">3</div><div class="l">losses in 2026, and it's only November</div><a class="src" href="https://www.espn.com/college-football/team/schedule/_/id/194/ohio-state-buckeyes" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></div>
     </div>
   </div>
 </section>
 
-<!-- THE ONE EXCEPTION -->
-<section class="block" id="timeline">
-  <div class="block-head">
-    <span class="kicker">THE ONE-YEAR EXCEPTION</span>
-    <h2 class="block-title">Four play-callers. One year without a collapse.</h2>
-    <p class="block-desc">In 2024, Ryan Day handed play-calling to Chip Kelly, an experienced coordinator with full autonomy. It's the only season in the Day era that didn't end in a signature, program-defining collapse.</p>
-  </div>
-
-  <table class="compare-table">
-    <caption class="visually-hidden">Ohio State's play-caller and result by season, 2019 through 2026</caption>
-    <thead>
-      <tr>
-        <th scope="col">Season</th>
-        <th scope="col">Who called the plays</th>
-        <th scope="col">What happened</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><th scope="row">2019</th><td>Ryan Day</td><td>Blew control late, lost the Fiesta Bowl to Clemson</td></tr>
-      <tr><th scope="row">2021–23</th><td>Ryan Day</td><td>Three straight losses to Michigan</td></tr>
-      <tr><th scope="row">2022</th><td>Ryan Day</td><td>Blew a 14-point CFP semifinal lead to Georgia</td></tr>
-      <tr class="win row-highlight"><th scope="row">2024</th><td>Chip Kelly</td><td>14–2. National Champions.</td></tr>
-      <tr><th scope="row">2025</th><td>Brian Hartline / Day (CFP)</td><td>Lost Big Ten title game to Indiana; lost Cotton Bowl to Miami</td></tr>
-      <tr><th scope="row">2026</th><td>Arthur Smith</td><td>Blew a 23–3 lead to Texas (24–23). Never led at USC (30–18). Blew a 14–0 lead to Oregon (41–28).</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- ARTHUR SMITH ROTATOR -->
-<section class="block" id="arthur-smith">
-  <div class="block-head">
-    <span class="kicker">THE HIRES THAT MADE IT WORSE</span>
-    <h2 class="block-title">Three hires. The same problem.</h2>
-    <p class="block-desc">An offensive coordinator with a history of collapse, a defensive coordinator whose unit breaks down away from home, and an offensive line that struggles in the biggest games. Every one was Ryan Day's call.</p>
-  </div>
-
-  <div class="rotator-outer">
-    <div class="rotator" id="rotator" role="region" aria-roledescription="carousel" aria-label="The coordinator hires, five highlights">
-      <button class="rotator-pause" id="rotatorPause" aria-pressed="false">Pause</button>
-      <div class="rotator-slide active" role="group" aria-roledescription="slide" aria-label="1 of 5" aria-live="polite">
-        <div>
-          <span class="eyebrow">FALCONS HEAD COACH, 2021–2023</span>
-          <h3>Fired after three straight losing seasons.</h3>
-          <p>Arthur Smith's only head coaching job ended in Atlanta. Three years, three 7–10 seasons, zero playoff appearances. His own late-season play-calling was singled out as part of the problem.</p>
-        </div>
-        <div class="stat-side">
-          <span class="num">21–30</span>
-          <span class="lbl">CAREER HC RECORD</span>
-        </div>
-      </div>
-      <div class="rotator-slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
-        <div>
-          <span class="eyebrow">STEELERS OFFENSIVE COORDINATOR, 2024–2025</span>
-          <h3>Bottom-half production, two years running.</h3>
-          <p>Even after Pittsburgh added a future Hall of Fame quarterback, the offense didn't improve. Two seasons, both finishing in the bottom half of the NFL in yardage.</p>
-        </div>
-        <div class="stat-side">
-          <span class="num">24th</span>
-          <span class="lbl">AVG. YARDS/GAME RANK</span>
-        </div>
-      </div>
-      <div class="rotator-slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
-        <div>
-          <span class="eyebrow">FIRST GAME AS OHIO STATE OC</span>
-          <h3>The same collapse, right on schedule.</h3>
-          <p>Zero college coaching experience. First marquee test as play-caller: a 23–3 lead evaporated into a 24–23 loss to Texas, the exact pattern he was hired to end.</p>
-        </div>
-        <div class="stat-side">
-          <span class="num">0</span>
-          <span class="lbl">GAMES OF COLLEGE EXPERIENCE BEFORE THIS HIRE</span>
-        </div>
-      </div>
-      <div class="rotator-slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
-        <div>
-          <span class="eyebrow">DEFENSIVE COORDINATOR MATT PATRICIA, 2025–PRESENT</span>
-          <h3>Five losses in two seasons. Four away from home.</h3>
-          <p>Indiana and Miami at neutral sites, then at Texas and at USC, plus a 41–28 home loss to Oregon. Four of the five losses came against ranked opponents, and the defense gave up 30 at USC and 41 to Oregon.</p>
-        </div>
-        <div class="stat-side">
-          <span class="num">4 of 5</span>
-          <span class="lbl">LOSSES AT NEUTRAL OR AWAY SITES</span>
-        </div>
-      </div>
-      <div class="rotator-slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
-        <div>
-          <span class="eyebrow">OFFENSIVE LINE COACH TYLER BOWEN, 2025–PRESENT</span>
-          <h3>Breaks down when the games matter most.</h3>
-          <p>Six sacks allowed in the 2025 regular season, then ten in the Big Ten title game and Cotton Bowl. In 2026 the line has been repeatedly short-handed and gave up 21 pressures at USC.</p>
-        </div>
-        <div class="stat-side">
-          <span class="num">10</span>
-          <span class="lbl">SACKS IN THE LAST TWO GAMES OF 2025</span>
-        </div>
-      </div>
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The pattern</span>
+      <h2 class="h-lg">Had the lead.<br><span class="red">Lost the game.</span></h2>
+      <p class="lede">Seven games. Three different play-callers. The same collapse.</p>
     </div>
-    <div class="rotator-nav" role="group" aria-label="Choose a slide">
-      <button class="dot active" onclick="showSlide(0)" aria-label="Slide 1 of 5" aria-current="true"></button>
-      <button class="dot" onclick="showSlide(1)" aria-label="Slide 2 of 5" aria-current="false"></button>
-      <button class="dot" onclick="showSlide(2)" aria-label="Slide 3 of 5" aria-current="false"></button>
-      <button class="dot" onclick="showSlide(3)" aria-label="Slide 4 of 5" aria-current="false"></button>
-      <button class="dot" onclick="showSlide(4)" aria-label="Slide 5 of 5" aria-current="false"></button>
+    <div class="collapse-grid">
+    <article class="cc rv">
+      <div class="yr">2019</div>
+      <h3 class="opp">Clemson · Playoff semifinal</h3>
+      <div class="led"><small>OSU LED</small>16–0</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 29–23</div>
+      <a class="src" href="https://elevenwarriors.com/ohio-state-football/2019-fiesta-bowl/2019/12/110939/ohio-state-comes-up-short-against-clemson-again-29-23-for-season-ending-loss-in-college-football" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
+    <article class="cc rv">
+      <div class="yr">2022</div>
+      <h3 class="opp">Michigan · at home</h3>
+      <div class="led"><small>OSU LED</small>20–17</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 45–23</div>
+      <a class="src" href="https://www.si.com/college/ohiostate/football/ohio-state-spectacular-collapse-ends-regular-season-in-crushing-loss-to-michigan" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
+    <article class="cc rv">
+      <div class="yr">2022</div>
+      <h3 class="opp">Georgia · Playoff semifinal</h3>
+      <div class="led"><small>OSU LED</small>38–24</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 42–41</div>
+      <a class="src" href="https://www.ncaa.com/live-updates/football/fbs/georgia-defeats-ohio-state-wins-peach-bowl-42-41-advance-college-football-playoff-final" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
+    <article class="cc rv">
+      <div class="yr">2023</div>
+      <h3 class="opp">Missouri · Cotton Bowl</h3>
+      <div class="led"><small>OSU LED</small>3–0</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 14–3</div>
+      <a class="src" href="https://sportsnaut.com/no-9-missouri-rallies-to-beat-no-7-ohio-state-in-cotton-bowl" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
+    <article class="cc rv">
+      <div class="yr">2025</div>
+      <h3 class="opp">Indiana · Big Ten title game</h3>
+      <div class="led"><small>OSU LED</small>10–6</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 13–10</div>
+      <a class="src" href="https://en.wikipedia.org/wiki/2025_Ohio_State_Buckeyes_football_team" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
+    <article class="cc rv">
+      <div class="yr">2026</div>
+      <h3 class="opp">at Texas</h3>
+      <div class="led"><small>OSU LED</small>23–3</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 24–23</div>
+      <a class="src" href="https://www.landgrantholyland.com/ohio-state-football/121714/ohio-state-buckeyes-football-texas-longhorns-loss-ryan-day-2026" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
+    <article class="cc rv">
+      <div class="yr">2026</div>
+      <h3 class="opp">Oregon · at home</h3>
+      <div class="led"><small>OSU LED</small>14–0</div>
+      <div class="arrow" aria-hidden="true">THEN ↓</div>
+      <div class="lost"><small>FINAL</small>L 41–28</div>
+      <a class="src" href="https://autzenzoo.com/5-winners-and-1-loser-from-oregon-ruining-ohio-state-s-season-in-columbus" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </article>
     </div>
   </div>
 </section>
 
-<!-- THE ASK -->
-<section class="block" id="the-ask">
-  <div class="block-head">
-    <span class="kicker">WHAT WE'RE ASKING FOR</span>
-    <h2 class="block-title">This isn't about anger. It's about accountability.</h2>
-    <p class="block-desc">We're asking the administration to act on seven years of documented evidence. Our position is simple: fire Ryan Day. If the administration won't go that far, the minimum acceptable response is to fire the staff responsible for these results.</p>
-  </div>
-
-  <div class="ask-grid">
-    <div class="ask-card">
-      <span class="opt-num">FIRE THE HEAD COACH</span>
-      <h3>A coaching change.</h3>
-      <p>Ohio State moves on from Ryan Day as head coach and conducts a genuine external search for a replacement who can close out the games this program keeps losing.</p>
+<section class="sec">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="kicker">Exhibit A · Sept. 12, 2026</span>
+      <h2 class="h-lg">Up 20 at Texas.<br><span class="red">Lost by 1.</span></h2>
+      <p class="lede">Ohio State led 23–3 entering the fourth quarter. Texas scored 21 straight. Day called it "maddening." Fans have seen this movie before.</p>
+      <p style="margin-top:14px"><a class="src" href="https://en.wikipedia.org/wiki/2026_Ohio_State_Buckeyes_football_team" target="_blank" rel="noopener noreferrer">Scoring by quarter ↗<span class="visually-hidden"> (opens in a new tab)</span></a> &nbsp; <a class="src" href="https://www.ajc.com/news/2026/09/ryan-day-calls-ohio-states-texas-collapse-maddening-as-sixth-ranked-buckeyes-seek-quick-fixes/" target="_blank" rel="noopener noreferrer">Day: “maddening” ↗<span class="visually-hidden"> (opens in a new tab)</span></a></p>
     </div>
-    <div class="ask-card">
-      <span class="opt-num">AT THE VERY LEAST, FIRE HIS STAFF</span>
-      <h3>Clean out the coaches responsible.</h3>
-      <p>If Day stays, the coaches he hired must go: offensive coordinator Arthur Smith, defensive coordinator Matt Patricia and offensive line coach Tyler Bowen, along with anyone else the administration finds responsible for these results. Keeping the head coach while keeping the same staff is not accountability.</p>
+    <figure class="chart rv">
+      <div class="chart-top"><span>OHIO STATE'S LEAD AT TEXAS</span><span class="now">FINAL: TEXAS 24, OSU 23</span></div>
+      <svg viewBox="0 0 760 260" role="img" aria-labelledby="chartT chartD">
+  <title id="chartT">Ohio State's lead at Texas, by quarter</title>
+  <desc id="chartD">Ohio State led by 10 after the first quarter, 17 at halftime and 20 after three quarters. Texas scored 21 unanswered points in the fourth quarter. Final: Texas 24, Ohio State 23.</desc>
+  <line x1="20" y1="170" x2="740" y2="170" stroke="#555" stroke-width="2"/>
+  <rect class="bar" x="35.0" y="100" width="120" height="70" fill="#f5f5f3" opacity="0.35" rx="2"/><text x="95.0" y="88" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="#f5f5f3">+10</text><text x="95.0" y="254" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" letter-spacing="2" fill="#a3a3a3">Q1</text><rect class="bar" x="225.0" y="51" width="120" height="119" fill="#f5f5f3" opacity="0.55" rx="2"/><text x="285.0" y="39" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="#f5f5f3">+17</text><text x="285.0" y="254" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" letter-spacing="2" fill="#a3a3a3">HALF</text><rect class="bar" x="415.0" y="30" width="120" height="140" fill="#f5f5f3" opacity="0.75" rx="2"/><text x="475.0" y="18" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="#f5f5f3">+20</text><text x="475.0" y="254" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" letter-spacing="2" fill="#a3a3a3">Q3</text><rect class="bar" x="605.0" y="170" width="120" height="8" fill="#c8102e" opacity="1" rx="2"/><text x="665.0" y="206" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="#ff4757">−1</text><text x="665.0" y="254" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="13" letter-spacing="2" fill="#a3a3a3">FINAL</text>
+</svg>
+    </figure>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap split">
+    <div class="rv">
+      <span class="kicker">The one year it worked</span>
+      <h2 class="h-lg">The title year,<br><span class="red">Day didn't call plays.</span></h2>
+      <p class="lede">In 2024, Chip Kelly called the plays and Ohio State won it all. Since then, play-calling has gone to Brian Hartline, back to Day and now to Arthur Smith. The big-game losses are back.</p>
+      <p style="margin-top:14px"><a class="src" href="https://en.wikipedia.org/wiki/2024_Ohio_State_Buckeyes_football_team" target="_blank" rel="noopener noreferrer">2024 season ↗<span class="visually-hidden"> (opens in a new tab)</span></a> &nbsp; <a class="src" href="https://africa.espn.com/college-football/story/_/id/43708415/sources-hartline-ohio-state-primary-oc-play-caller" target="_blank" rel="noopener noreferrer">2025 play-calling ↗<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+    </div>
+    <div class="era">
+      <div class="era-row rv"><div class="y">2019–23</div><div class="who">Ryan Day<span>calls the plays</span></div><div class="res">8 LOSSES · NO TITLE</div></div>
+      <div class="era-row win rv"><div class="y">2024</div><div class="who">Chip Kelly<span>calls the plays</span></div><div class="res">NATIONAL CHAMPIONS</div></div>
+      <div class="era-row rv"><div class="y">2025</div><div class="who">Hartline, then Day<span>Day takes it back for the playoff</span></div><div class="res">LOST LAST 2</div></div>
+      <div class="era-row rv"><div class="y">2026</div><div class="who">Arthur Smith<span>Day's new hire</span></div><div class="res">3 LOSSES BY NOV. 7</div></div>
     </div>
   </div>
 </section>
 
-<!-- NUMBERS -->
-<section class="block" id="numbers">
-  <div class="block-head">
-    <span class="kicker">BY THE NUMBERS</span>
-    <h2 class="block-title">$12.5 million a year. A 33% win rate when it matters most.</h2>
-    <p class="block-desc">Ohio State's athletic department generated a record $336.1 million last year. It can afford to demand a program that doesn't repeat the same failure in its biggest games.</p>
-  </div>
-
-  <div class="explore-grid">
-    <div class="explore-card">
-      <span class="tag">SALARY</span>
-      <h3>$12.5M / year</h3>
-      <p>2nd highest-paid coach in college football, under contract through 2031.</p>
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The hires</span>
+      <h2 class="h-lg">He picked the staff, too.</h2>
     </div>
-    <div class="explore-card">
-      <span class="tag">BUYOUT</span>
-      <h3>$80.5M max exposure</h3>
-      <p>Reduced by offset if Day is hired elsewhere. Against $336M in annual revenue.</p>
-    </div>
-    <div class="explore-card">
-      <span class="tag">REVENUE</span>
-      <h3>$336.1M FY25</h3>
-      <p>A department record: football is one of only two sports that runs a surplus.</p>
-    </div>
-    <div class="explore-card">
-      <span class="tag">RETURN</span>
-      <h3>3–6 vs. Top 5</h3>
-      <p>A 33% win rate against the sport's best, against a national 82% baseline.</p>
+    <div class="cards3">
+      <article class="card rv"><span class="role">OFFENSIVE COORDINATOR</span><h3>Arthur Smith</h3><div class="big">21–30</div><p>NFL head coaching record. Zero college games before 2026. His first big test: the Texas collapse.</p><a class="more" href="hires/#smith">His record →</a></article>
+      <article class="card rv"><span class="role">DEFENSIVE COORDINATOR</span><h3>Matt Patricia</h3><div class="big">13–29–1</div><p>NFL head coaching record. Five losses at Ohio State, four of them away from Columbus.</p><a class="more" href="hires/#patricia">His record →</a></article>
+      <article class="card rv"><span class="role">OFFENSIVE LINE</span><h3>Tyler Bowen</h3><div class="big">10</div><p>Sacks allowed in the last two games of 2025, after six in the entire regular season.</p><a class="more" href="hires/#bowen">His record →</a></article>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta" id="take-action">
-  <h2>The case is made. Now it needs to be heard.</h2>
-  <p>Send the letter. Share the record. Ohio State's administration responds to documented, repeated, specific pressure, not silence.</p>
-  <div class="hero-buttons">
-    <a href="Final-Take-Action.html" class="btn btn-primary">Send a Letter to the Athletic Director</a>
-    <a href="Final-Take-Action.html" class="btn btn-ghost">Share This Case</a>
+<section class="sec" id="the-ask">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">The ask</span>
+      <h2 class="h-lg">What we want.</h2>
+      <p class="lede">After USC, Day said everything is up for evaluation. We agree.</p>
+      <p><a class="src" href="https://spectrumnews1.com/oh/columbus/news/2026/11/04/ryan-day--everything-up-for-evaluation-after-loss" target="_blank" rel="noopener noreferrer">Source ↗<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+    </div>
+    <div class="ask">
+      <div class="ask-card primary rv"><span class="tag">FIRST CHOICE</span><h3>Fire Ryan Day.</h3><p>Move on and run a real national search for a coach who can close out the games this program keeps losing.</p></div>
+      <div class="ask-card rv"><span class="tag red">THE MINIMUM</span><h3>Fire his staff.</h3><p>If Day stays, Smith, Patricia and Bowen go. Same head coach, same staff, same result is not accountability.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tags" id="hashtags">
+  <div class="wrap">
+    <span class="kicker rv">Tap a hashtag to copy it</span>
+    <div class="tag-wall">
+      <button type="button" class="tag-big main rv" data-tag="#FireOSUCoaches">#FireOSUCoaches</button>
+      <button type="button" class="tag-big rv" data-tag="#RyanDay">#RyanDay</button>
+      <button type="button" class="tag-big rv" data-tag="#OhioState">#OhioState</button>
+      <button type="button" class="tag-big rv" data-tag="#Buckeyes">#Buckeyes</button>
+      <button type="button" class="tag-big rv" data-tag="#CFB">#CFB</button>
+    </div>
+    <div class="btn-row rv" style="justify-content:center">
+      <button type="button" class="btn btn-ghost" id="copyAllTags">Copy all hashtags</button>
+      <button type="button" class="btn btn-ghost" data-share>Share this site</button>
+    </div>
+  </div>
+</section>
+
+<section class="final" data-hide-sticky>
+  <div class="wrap">
+    <h2 class="h-xl rv">Enough.</h2>
+    <p class="lede rv">Two minutes. One short, respectful letter with your name on it. That's what the people who decide actually read.</p>
+    <div class="btn-row rv">
+      <a data-track="CTA: Send Letter" href="take-action/" class="btn btn-primary btn-big">Send your letter <span aria-hidden="true">→</span></a>
+      <button type="button" class="btn btn-ghost btn-big" data-share>Share with a fan</button>
+    </div>
   </div>
 </section>
 
 </main>
-
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="logo" style="margin-bottom:14px;">FIRE<span>OSU</span>COACHES</div>
-      <div class="footer-links">
-        <a href="index.html">The Case</a>
-        <a href="Final-Timeline.html">The Timeline</a>
-        <a href="Final-Arthur-Smith.html">The Hires</a>
-        <a href="Final-Numbers.html">The Numbers</a>
+<footer data-hide-sticky>
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="./" class="logo">FIRE<span>OSU</span>COACHES</a>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="./">The Case</a>
+        <a href="timeline/">The Timeline</a>
+        <a href="hires/">The Hires</a>
+        <a href="numbers/">The Numbers</a>
         <a href="#the-ask">The Ask</a>
-        <a href="Final-FAQ.html">FAQ</a>
-        <a href="Final-Take-Action.html">Take Action</a>
-      </div>
+        <a href="faq/">FAQ</a>
+        <a href="sources/">Sources</a>
+        <a href="take-action/">Take Action</a>
+      </nav>
     </div>
-    <div class="social-row">
-      <a href="#" aria-label="TikTok">TT</a>
-      <a href="#" aria-label="Instagram">IG</a>
-    </div>
-  </div>
-  <div class="footer-note wrap">
-    This site is built on publicly reported records, statistics, and direct quotes from coaches, players, and journalists. It is a fan advocacy project, not affiliated with The Ohio State University. We aim to keep every claim factual and sourced. See the full timeline for citations.
+    <p class="foot-note">An independent fan project, not affiliated with The Ohio State University. Facts, not attacks: no personal attacks on coaches, players or families. Every claim is sourced. <a href="sources/">See the sources</a>.</p>
   </div>
 </footer>
-
-<script>
-  const slides = document.querySelectorAll('.rotator-slide');
-  const dots = document.querySelectorAll('.dot');
-  const pauseBtn = document.getElementById('rotatorPause');
-  const rotatorEl = document.getElementById('rotator');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let current = 0;
-  let timer = null;
-  let isPaused = prefersReducedMotion; // never autoplay if the user asked for reduced motion
-
-  function showSlide(i) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    dots[current].setAttribute('aria-current', 'false');
-    current = i;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    dots[current].setAttribute('aria-current', 'true');
-  }
-
-  function nextSlide() {
-    showSlide((current + 1) % slides.length);
-  }
-
-  function startTimer() {
-    clearInterval(timer);
-    if (!isPaused) {
-      timer = setInterval(nextSlide, 6000);
-    }
-  }
-
-  function stopTimer() {
-    clearInterval(timer);
-  }
-
-  // Manual slide selection always resets the timer (unless paused)
-  const originalShowSlide = showSlide;
-  showSlide = function(i) {
-    originalShowSlide(i);
-    startTimer();
-  };
-
-  pauseBtn.addEventListener('click', () => {
-    isPaused = !isPaused;
-    pauseBtn.textContent = isPaused ? 'Play' : 'Pause';
-    pauseBtn.setAttribute('aria-pressed', String(isPaused));
-    if (isPaused) { stopTimer(); } else { startTimer(); }
-  });
-
-  // Pause while a keyboard or mouse user is engaging with the carousel
-  rotatorEl.addEventListener('mouseenter', stopTimer);
-  rotatorEl.addEventListener('mouseleave', () => { if (!isPaused) startTimer(); });
-  rotatorEl.addEventListener('focusin', stopTimer);
-  rotatorEl.addEventListener('focusout', () => { if (!isPaused) startTimer(); });
-
-  if (prefersReducedMotion) {
-    pauseBtn.textContent = 'Play';
-    pauseBtn.setAttribute('aria-pressed', 'true');
-  } else {
-    startTimer();
-  }
-</script>
-
-<script>
-  (function() {
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('primary-nav');
-    if (!menuToggle || !navLinks) return;
-
-    function closeMenu() {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-    function openMenu() {
-      navLinks.classList.add('open');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    }
-
-    menuToggle.addEventListener('click', () => {
-      if (navLinks.classList.contains('open')) { closeMenu(); } else { openMenu(); }
-    });
-
-    navLinks.querySelectorAll('a').forEach((a) => {
-      a.addEventListener('click', closeMenu);
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navLinks.classList.contains('open')) return;
-      if (navLinks.contains(e.target) || menuToggle.contains(e.target)) return;
-      closeMenu();
-    });
-  })();
-</script>
-
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a href="take-action/" tabindex="-1" data-track="CTA: Sticky Bar">Send your letter · 2 minutes →</a>
+</div>
+<div id="sr-status" class="visually-hidden" role="status" aria-live="polite"></div>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

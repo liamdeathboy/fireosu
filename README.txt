@@ -1,4 +1,4 @@
-FIRE OSU COACHES (fireosucoaches.com)
+SAVE OSU FOOTBALL (saveosufootball.com)
 Static site, no build step. Upload everything in this folder to the root of any static host
 (Netlify, Cloudflare Pages, GitHub Pages, Vercel) and point the domain at it.
 
@@ -16,7 +16,7 @@ Preview locally: run "python3 -m http.server" in this folder, then open http://l
 Analytics (assets/analytics.js):
   Off until you add an ID. Open assets/analytics.js and set ONE line:
     Plausible (recommended, cookie-free, no consent banner):
-      window.FOC_ANALYTICS = { provider: 'plausible', id: 'fireosucoaches.com' };
+      window.FOC_ANALYTICS = { provider: 'plausible', id: 'saveosufootball.com' };
       Then add the site in your Plausible dashboard.
     Google Analytics 4:
       window.FOC_ANALYTICS = { provider: 'ga4', id: 'G-XXXXXXXXXX' };
@@ -27,11 +27,11 @@ Analytics (assets/analytics.js):
   In Plausible, add these as Goals (Settings > Goals > Custom event) to see conversion rates.
 
 Sitemap: /sitemap.xml and /robots.txt are included. After the site is live, submit
-https://fireosucoaches.com/sitemap.xml in Google Search Console and Bing Webmaster Tools.
-If your domain isn't fireosucoaches.com, change DOMAIN in sitemap.xml, robots.txt and the
-canonical tags (search and replace "fireosucoaches.com").
+https://saveosufootball.com/sitemap.xml in Google Search Console and Bing Webmaster Tools.
+If your domain isn't saveosufootball.com, change DOMAIN in sitemap.xml, robots.txt and the
+canonical tags (search and replace "saveosufootball.com").
 
 Before publishing:
 - Add a published recap with the Oregon 41-28 final score to the Sources page when one is available.
 - The Michigan countdown on the home page targets Nov. 28, 2026 and hides itself after that date.
-- The share text in Take Action assumes the domain https://fireosucoaches.com/. Change it if yours differs.
+- The share text in Take Action assumes the domain https://saveosufootball.com/. Change it if yours differs.

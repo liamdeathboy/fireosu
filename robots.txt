@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fireosucoaches.com/sitemap.xml
+Sitemap: https://saveosufootball.com/sitemap.xml

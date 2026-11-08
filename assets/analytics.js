@@ -1,7 +1,7 @@
-/* Fire OSU Coaches: analytics
+/* Save OSU Football: analytics
    1) Pick a provider and paste your ID below. Nothing loads until you do.
       Recommended: Plausible (cookie-free, no consent banner needed).
-        provider: 'plausible', id: 'fireosucoaches.com'
+        provider: 'plausible', id: 'saveosufootball.com'
       Or Google Analytics 4:
         provider: 'ga4', id: 'G-XXXXXXXXXX'
    2) Key actions are tracked as events automatically (see EVENTS in README). */

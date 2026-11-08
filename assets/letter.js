@@ -4,6 +4,11 @@
   var out = document.getElementById('letterPreview');
   if (!out) return;
   var SUBJECT = 'Ohio State football needs accountability';
+  /* RECIPIENTS: add confirmed addresses here and they auto-fill the To and CC lines.
+     Example: var TO = ['name.1@osu.edu']; var CC = ['office@osu.edu'];
+     Leave empty until confirmed; a wrong address bounces every fan's letter. */
+  var TO = ['athletic_director@osu.edu'];
+  var CC = ['board@osu.edu'];
   function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function build(html) {
     var name = nameI.value.trim(), who = whoI.value.trim(), line = lineI.value.trim();
@@ -35,6 +40,10 @@
   });
 
   var box = document.getElementById('emailConsent'), eb = document.getElementById('emailBtn');
+  var rcpt = document.getElementById('consentRcpt');
+  if (rcpt) rcpt.textContent = TO.length
+    ? 'It will be addressed to ' + TO.join(', ') + (CC.length ? ', with ' + CC.join(', ') + ' copied' : '') + '.'
+    : 'Add the recipient\'s address from the contacts below.';
   eb.addEventListener('click', function () { FOC.track('Email Prompt Opened'); box.hidden = false; eb.setAttribute('aria-expanded', 'true'); document.getElementById('consentYes').focus(); });
   function closeBox() { box.hidden = true; eb.setAttribute('aria-expanded', 'false'); eb.focus(); }
   document.getElementById('consentNo').addEventListener('click', closeBox);
@@ -45,6 +54,8 @@
     box.hidden = true; eb.setAttribute('aria-expanded', 'false');
     FOC.track('Letter Emailed', { personalized: !!lineI.value.trim() });
     markDone('Your email app should be open. Review it and press send.');
-    window.location.href = 'mailto:?subject=' + encodeURIComponent(SUBJECT) + '&body=' + encodeURIComponent(body.replace(/\n/g, '\r\n'));
+    var href = 'mailto:' + TO.join(',') + '?' + (CC.length ? 'cc=' + CC.join(',') + '&' : '') +
+      'subject=' + encodeURIComponent(SUBJECT) + '&body=' + encodeURIComponent(body.replace(/\n/g, '\r\n'));
+    window.location.href = href;
   });
 })();

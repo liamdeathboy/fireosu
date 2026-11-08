@@ -1,4 +1,4 @@
-/* Fire OSU Coaches: shared design system */
+/* Save OSU Football: shared design system */
 :root{
   --black:#0a0a0a; --ink:#111; --card:#161616; --card-2:#1d1d1d; --line:#2a2a2a;
   --white:#f5f5f3; --dim:#a3a3a3; --dim-2:#7d7d7d;
@@ -247,15 +247,18 @@ table.mini td.r{color:var(--red-text);font-weight:800;white-space:nowrap}
 .src-list a:hover{color:var(--red-text)}
 .src-list .host{color:var(--dim-2);font-size:.78rem}
 
-/* sticky cta (mobile) */
-.sticky-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:90;display:none;transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.sticky-cta.show{transform:none}
-.sticky-cta a{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:16px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.6)}
-@media (max-width:860px){.sticky-cta{display:block}}
-@media (prefers-reduced-motion:reduce){.sticky-cta{transition:none}}
+/* sticky cta (mobile): dark full-width bar so iOS Safari tints its toolbar black, not red.
+   Fully removed from layout (display:none) when hidden so Safari never samples it. */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(10,10,10,.94);
+  border-top:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.sticky-cta a{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:800;padding:15px;border-radius:8px}
+@media (max-width:860px){.sticky-cta.show{display:block;animation:stickyIn .3s cubic-bezier(.2,.8,.2,1)}}
+@keyframes stickyIn{from{transform:translateY(100%)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){.sticky-cta.show{animation:none}}
 
 /* footer */
-footer{padding:56px 0 110px;color:var(--dim);font-size:.88rem}
+footer{padding:56px 0 calc(110px + env(safe-area-inset-bottom));color:var(--dim);font-size:.88rem}
 .foot-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:22px}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 20px}
 .foot-links a{text-decoration:none;color:var(--dim)}

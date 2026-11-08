@@ -112,7 +112,7 @@
   document.querySelectorAll('[data-share]').forEach(function (b) {
     b.addEventListener('click', function () {
       var url = b.getAttribute('data-url') || location.href.split('#')[0];
-      var data = { title: 'Save OSU Football', text: b.getAttribute('data-text') || '15 losses. Same ending. The record, sourced. #SaveOSUFootball', url: url };
+      var data = { title: 'Save OSU Football', text: b.getAttribute('data-text') || 'Seven blown leads. Zero accountability. The record, sourced. #SaveOSUFootball', url: url };
       track('Share', { page: location.pathname, method: navigator.share ? 'native' : 'copy' });
       if (navigator.share) { navigator.share(data).catch(function () {}); }
       else copyText(data.text + ' ' + url, function () { var o = b.innerHTML; b.textContent = 'Link copied!'; say('Link copied to clipboard.'); setTimeout(function () { b.innerHTML = o; }, 1800); },

@@ -31,6 +31,14 @@ https://saveosufootball.com/sitemap.xml in Google Search Console and Bing Webmas
 If your domain isn't saveosufootball.com, change DOMAIN in sitemap.xml, robots.txt and the
 canonical tags (search and replace "saveosufootball.com").
 
+SEO launch checklist (do these once the site is live):
+  1. Google Search Console: add saveosufootball.com, verify it, then submit /sitemap.xml.
+  2. Bing Webmaster Tools: import from Search Console (also feeds DuckDuckGo and ChatGPT search).
+  3. Request indexing for the home page and /timeline/ in Search Console.
+  4. Earn links: post the site on Ohio State forums, Reddit (r/OhioStateFootball), and in replies to
+     local sports writers. Links from real fan communities matter more than anything on the page.
+  5. Keep it fresh: after each game, update the record and the sitemap date. Google favors pages that change.
+
 Before publishing:
 - Add a published recap with the Oregon 41-28 final score to the Sources page when one is available.
 - The Michigan countdown on the home page targets Nov. 28, 2026 and hides itself after that date.

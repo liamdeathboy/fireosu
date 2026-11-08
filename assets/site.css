@@ -1,3 +1,10 @@
+/* self-hosted fonts (SIL Open Font License) */
+@font-face{font-family:'Anton';src:url(fonts/anton-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Inter';src:url(fonts/inter-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Inter';src:url(fonts/inter-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Inter';src:url(fonts/inter-latin-600-normal.woff2) format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Inter';src:url(fonts/inter-latin-700-normal.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Inter';src:url(fonts/inter-latin-800-normal.woff2) format('woff2');font-weight:800;font-display:swap}
 /* Save OSU Football: shared design system */
 :root{
   --black:#0a0a0a; --ink:#111; --card:#161616; --card-2:#1d1d1d; --line:#2a2a2a;
@@ -44,7 +51,7 @@ nav.links a.current{color:var(--red-text);border-bottom-color:var(--red-text)}
 
 /* ---------- type ---------- */
 .kicker{display:inline-block;color:var(--red-text);font-size:.78rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px}
-.h-xl{font-family:var(--display);font-weight:400;font-size:clamp(3.2rem,11vw,8.5rem);line-height:.92;letter-spacing:.5px;text-transform:uppercase}
+.h-xl{font-family:var(--display);font-weight:400;font-size:clamp(3rem,10.5vw,8.5rem);line-height:.92;letter-spacing:.5px;text-transform:uppercase;overflow-wrap:break-word;hyphens:manual}
 .h-lg{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1;text-transform:uppercase}
 .h-md{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.05;text-transform:uppercase}
 .red{color:var(--red-text)}
